@@ -2,7 +2,8 @@ import React from 'react'
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import PersonCard from './components/personCard';
+import PersonCardClass from './components/PersonCardClass';
+import PersonCardFunctional from './components/PersonCardFunctional';
 
 const people = [
   {"firstName": "Doe", "lastName": "Jane", "age":45, "hairColor":"Black"},
@@ -14,15 +15,16 @@ const people = [
 function App() {
   return (
     <div className="container">
-
-      {
-        people.map( person => {
-          return <PersonCard firstName={person.firstName} lastName={person.lastName} age={person.age} hairColor={person.hairColor}/>
-        })
-      }
       {/* <PersonCard firstName={"Smith"} lastName={"John"} age={"88"} hairColor={"Brown"}/>
       <PersonCard firstName={"Fillmore"} lastName={"Millard"} age={"50"} hairColor={"Brown"}/>
       <PersonCard firstName={"Smith"} lastName={"Maria"} age={"62"} hairColor={"Brown"}/> */}
+
+      {
+        people.map( person => {
+          return <PersonCardFunctional firstName={person.firstName} lastName={person.lastName} age={person.age} hairColor={person.hairColor}/>
+        })
+      }
+
     </div>
   );
 }
